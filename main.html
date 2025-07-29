@@ -3,77 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - Digital stress Hub</title>
+  <title>Home - Digital Stress Hub</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    form input, form button {
+      padding: 8px;
+      margin-top: 5px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    form button {
+      background-color: #2a6f63;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Digital stress Hub</h1>
+    <h1>Digital Stress Hub</h1>
     <p>Your guide to avoiding digital stress.</p>
     <nav>
       <a href="login.html">Login</a> |
-      <a href="index.html">intro</a> |
+      <a href="index.html">Intro</a> |
       <a href="logout.html">Logout</a>
     </nav>
   </header>
 
-  <div class="container">
-      <main class="content">
-  <h2>How to Avoid Digital Stress</h2>
-  <ul>
-    <li>Set time limits on apps and devices.</li>
-    <li>Take regular screen breaks every hour.</li>
-    <li>Practice mindfulness or deep breathing.</li>
-    <li>Use blue light filters, especially at night.</li>
-    <li>Establish a daily no-device time (like during meals).</li>
-  </ul>
+  <div class="container" style="display: flex; gap: 20px;">
+    <main class="content" style="flex: 2;">
+      <h2>How to Avoid Digital Stress</h2>
+      <ul>
+        <li>Set time limits on apps and devices.</li>
+        <li>Take regular screen breaks every hour.</li>
+        <li>Practice mindfulness or deep breathing.</li>
+        <li>Use blue light filters, especially at night.</li>
+        <li>Establish a daily no-device time (like during meals).</li>
+      </ul>
 
-  <!-- Contact Info and Form -->
-  <section style="margin-top: 40px;">
-    <h3>Contact Us</h3>
-    <p>📞 Need help? Call us at: <strong>+20 100 123 4567</strong></p>
-    <form onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
-      <label for="name">Your Name:</label><br>
-      <input type="text" id="name" name="name" required /><br><br>
+      <section style="margin-top: 40px;">
+        <h3>Contact Us</h3>
+        <p>📞 Need help? Call us at: <strong>+20 100 123 4567</strong></p>
+        <form onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
+          <label for="name">Your Name:</label><br>
+          <input type="text" id="name" name="name" required /><br><br>
 
-      <label for="age">Your Age:</label><br>
-      <input type="number" id="age" name="age" required /><br><br>
+          <label for="age">Your Age:</label><br>
+          <input type="number" id="age" name="age" required /><br><br>
 
-      <button type="submit">Request Help</button>
-    </form>
-  </section>
-</main>
+          <button type="submit">Request Help</button>
+        </form>
+      </section>
+    </main>
 
-    <aside class="sidebar" >
-  <h3>Visual Tips</h3>
-  <img id="tip1" src="https://www.shutterstock.com/image-vector/limit-screen-time-healthy-computer-260nw-1736579408.jpg" alt="Limit screen time" />
-  <img id="tip2" src="https://img.freepik.com/free-photo/take-break-message-lightbox-arrangement_23-2149150441.jpg" alt="Take breaks" />
-  <img id="tip3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRllC61AcuGOpPpsHMu7-KQo8Mowjw0LKBLzw&s" alt="Meditation and balance" />
-  </aside>
-
+    <aside class="sidebar" style="flex: 1;">
+      <h3>Visual Tips</h3>
+      <img id="tip1" src="https://www.shutterstock.com/image-vector/limit-screen-time-healthy-computer-260nw-1736579408.jpg" alt="Limit screen time" />
+      <img id="tip2" src="https://img.freepik.com/free-photo/take-break-message-lightbox-arrangement_23-2149150441.jpg" alt="Take breaks" />
+      <img id="tip3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRllC61AcuGOpPpsHMu7-KQo8Mowjw0LKBLzw&s" alt="Meditation and balance" />
+    </aside>
   </div>
 
   <footer>
-    <p>&copy; 2025 Digital stress Hub</p>
+    <p>&copy; 2025 Digital Stress Hub</p>
   </footer>
+
   <script>
-  const tip1 = document.getElementById('tip1');
-  const tip2 = document.getElementById('tip2');
-  const tip3 = document.getElementById('tip3');
+    const tip1 = document.getElementById('tip1');
+    const tip2 = document.getElementById('tip2');
+    const tip3 = document.getElementById('tip3');
 
-  setInterval(() => {
-    tip1.style.display = tip1.style.display === 'none' ? 'block' : 'none';
-  }, 5000); // Toggle every 5 seconds
+    setInterval(() => {
+      tip1.style.display = tip1.style.display === 'none' ? 'block' : 'none';
+    }, 5000);
 
-  setInterval(() => {
-    tip2.style.display = tip2.style.display === 'none' ? 'block' : 'none';
-  }, 8000); // Toggle every 8 seconds
+    setInterval(() => {
+      tip2.style.display = tip2.style.display === 'none' ? 'block' : 'none';
+    }, 8000);
 
-  setInterval(() => {
-    tip3.style.display = tip3.style.display === 'none' ? 'block' : 'none';
-  }, 10000); // Toggle every 10 seconds
-</script>
-
-
+    setInterval(() => {
+      tip3.style.display = tip3.style.display === 'none' ? 'block' : 'none';
+    }, 10000);
+  </script>
 </body>
 </html>
+
