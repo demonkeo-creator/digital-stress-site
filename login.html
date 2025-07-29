@@ -5,10 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - Digital stress Hub</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .background {
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRlzv_0T2y84-073RnluOIUmmITL-30e5tGQ&s') no-repeat center center;
+      background-size: cover;
+      position: absolute;
+      width: 110%;
+      height: 110%;
+      top: -5%;
+      left: -5%;
+      z-index: -1;
+      transition: transform 0.1s ease-out;
+    }
+
+    .login-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    .login-container input {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+      padding: 10px;
+    }
+
+    .login-container button {
+      padding: 10px 20px;
+      background-color: #2a6f63;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+  </style>
 </head>
-<body class="login-body">
+<body>
+  <div class="background" id="bg"></div>
+
   <div class="login-container">
-    <h2>Welcome to Digital Stress Hub</h2>
+    <h2>Welcome to Digital Detox Hub</h2>
     <p>Log in to learn how to protect yourself from digital stress.</p>
     <form action="index.html" method="get">
       <input type="text" placeholder="Username" required />
@@ -16,5 +68,14 @@
       <button type="submit">Login</button>
     </form>
   </div>
+
+  <script>
+    const bg = document.getElementById('bg');
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+    });
+  </script>
 </body>
 </html>
