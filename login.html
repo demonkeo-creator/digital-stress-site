@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - Digital stress Hub</title>
+  <title>Login - Digital Stress Hub</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body, html {
@@ -54,6 +54,11 @@
       border-radius: 4px;
     }
 
+    .login-container a {
+      display: block;
+      margin-top: 10px;
+      color: #2a6f63;
+    }
   </style>
 </head>
 <body>
@@ -62,11 +67,12 @@
   <div class="login-container">
     <h2>Welcome to Digital Detox Hub</h2>
     <p>Log in to learn how to protect yourself from digital stress.</p>
-    <form action="index.html" method="get">
-      <input type="text" placeholder="Username" required />
-      <input type="password" placeholder="Password" required />
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
       <button type="submit">Login</button>
     </form>
+    <a href="signup.html">Don't have an account? Sign up</a>
   </div>
 
   <script>
@@ -76,6 +82,24 @@
       const y = (e.clientY / window.innerHeight - 0.5) * 20;
       bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
     });
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const enteredUsername = document.getElementById("username").value;
+      const enteredPassword = document.getElementById("password").value;
+
+      const savedUsername = localStorage.getItem("savedUsername");
+      const savedPassword = localStorage.getItem("savedPassword");
+
+      if (enteredUsername === savedUsername && enteredPassword === savedPassword) {
+        // alert("Login successful!");
+        window.location.href = "index.html";
+      } else {
+        alert("Incorrect username or password.");
+      }
+    });
   </script>
 </body>
 </html>
+
