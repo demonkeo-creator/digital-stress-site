@@ -5,10 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digital stress Hub</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Visual background layer */
+    .background {
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRlzv_0T2y84-073RnluOIUmmITL-30e5tGQ&s') no-repeat center center;
+      background-size: cover;
+      position: fixed;
+      width: 110%;
+      height: 110%;
+      top: -5%;
+      left: -5%;
+      z-index: -1;
+      transition: transform 0.1s ease-out;
+    }
+
+    header, footer {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      z-index: 1;
+      position: relative;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: #2a6f63;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      width: 65%;
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .sidebar {
+      width: 30%;
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
+  <div class="background" id="bg"></div>
+
   <header>
-    <h1>Digital stress Hub</h1>
+    <h1>Digital Stress Hub</h1>
     <p>Helping you find balance in a hyperconnected world.</p>
     <nav>
       <a href="login.html">Login</a> |
@@ -41,9 +109,9 @@
       <h3>Recent Posts</h3>
       <ul>
         <li><a href="https://www.youtube.com/results?search_query=5-Minute+Stress+Reset">5-Minute Stress Reset</a></li>
-        <li><a href="https://www.youtube.com/watch?v=_1V0rDSTC9I&pp=ygUdSG93IFNjcmVlbnMgQWZmZWN0IFlvdXIgU2xlZXDSBwkJxwkBhyohjO8%3D">How Screens Affect Your Sleep</a></li>
-        <li><a href="https://www.youtube.com/watch?v=7VfkJvI_W3I&pp=ygUbRGlnaXRhbCBEZWNsdXR0ZXIgaW4gNyBEYXlz">Digital Declutter in 7 Days</a></li>
-        <li><a href="https://www.youtube.com/watch?v=vukvZJxHYcg&pp=ygUTTWluZGZ1bCBUZWNoIEhhYml0cw%3D%3D">Mindful Tech Habits</a></li>
+        <li><a href="https://www.youtube.com/watch?v=_1V0rDSTC9I">How Screens Affect Your Sleep</a></li>
+        <li><a href="https://www.youtube.com/watch?v=7VfkJvI_W3I">Digital Declutter in 7 Days</a></li>
+        <li><a href="https://www.youtube.com/watch?v=vukvZJxHYcg">Mindful Tech Habits</a></li>
       </ul>
 
       <h4>Quick Tip:</h4>
@@ -52,7 +120,18 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 Digital stress Hub. All rights reserved.</p>
+    <p>&copy; 2025 Digital Stress Hub. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Mouse parallax effect
+    const bg = document.getElementById('bg');
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+    });
+  </script>
 </body>
 </html>
+
